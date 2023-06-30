@@ -2,6 +2,6 @@
 
 In this project, I aimed to use some of the versatile and rather fundamental features of CSS. Grid display, gradient coloring and flex display.
 
-<h2>Running Gif</h2>
+<h2>GIF of the project</h2>
 
 ![](ekran.gif)
