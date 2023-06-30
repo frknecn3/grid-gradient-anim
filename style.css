@@ -1,0 +1,287 @@
+.ana{
+    background-color: yellowgreen;
+    display: grid;
+    margin: 30px;
+}
+
+.cocuk{
+    background-color: wheat;
+    padding: 5px;
+    margin: 5px;
+}
+
+.ana1{
+    grid-template-columns: 100px 30% 1fr 2fr auto;
+    grid-auto-rows: 100px;
+    height: 400px;
+    align-content: space-between;
+    background-color: cadetblue;
+}
+
+.ana1 > div:nth-child(2){
+    align-self: center;
+    justify-self: center;
+}
+
+.ana1 > div:nth-child(3){
+    /*vertical horizontal dikey ve yatay */
+    place-self: start center;
+}
+
+.ana1 > div:nth-child(1){
+    /*sutun baslangin - bitis */
+    grid-column:  2 / 4;
+    /* satir baslangic - bitis*/
+    grid-row: 2 / 4;
+}
+
+.ana2{
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows: 40px 40% auto;
+    justify-content: space-evenly;
+    background-color: blueviolet;
+    height: 300px;
+    align-content: space-around;
+
+}
+
+.ana2 > div:nth-child(1){
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.ana3 {
+    background-color: aqua;
+    grid-template-columns: repeat(4, 100px);
+    justify-content: end;
+    height: 400px;
+    align-content: space-between;
+}
+
+.ana3 > div:nth-child(1){
+    /* gird-column ve gird-row un tek halde kullanimi 
+    satir baslangic, sutun baslancgin, satir bitis, sutun bitis*/
+    grid-area: 2 / 2 / 4 / 4 ;
+  
+}
+
+.ana4{
+    background-color: violet;
+    grid-template-columns: repeat(4,100px);
+    justify-content: center;
+    height: 200px;
+    align-content: flex-start;
+}
+
+
+.ana5{
+    background-color: violet;
+    grid-template-columns: repeat(4,100px);
+    justify-content: space-around;
+    height: 200px;
+    align-content: flex-end;
+}
+
+.ana6{
+    background-color: brown;
+    grid-template-columns: repeat(4,100px);
+    justify-content: space-between;
+    height: 200px;
+    align-content: center;
+}
+
+.ana7{
+    grid-template-areas: 'alt alt alt .'
+                         'alt alt alt .'
+                         'ust ust ust .';
+}
+
+.ana7 > div:nth-child(6){
+    grid-area: alt;
+    background-color: blueviolet;
+}
+
+.ana7 > div:nth-child(8){
+    grid-area: ust;
+    background-color: yellow;
+}
+.ana8 > div{
+    visibility: hidden;
+}
+.ana8{
+    grid-template-areas: 'ust ust ust ust'
+                         '.  anamenu anamenu .'
+                         'icerik icerik yanmenu yanmenu'
+                         'alt alt . .';
+
+    background: conic-gradient(red 45deg, green 180deg, blue 360deg);
+
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}
+
+.ana8 > div:nth-child(1){
+    grid-area: ust;
+}
+
+.ana8 > div:nth-child(2){
+    grid-area: anamenu;
+}
+
+.ana8 > div:nth-child(3){
+    grid-area: icerik;
+}
+
+.ana8 > div:nth-child(4){
+    grid-area: yanmenu;
+}
+
+.ana8 > div:nth-child(5){
+    grid-area: alt;
+}
+
+.kadi:focus{
+    background-color: red;
+    color: white;
+}
+
+.deneme p:first-letter{
+    font-size: 30px;
+    background-color: yellowgreen;
+}
+.deneme p:first-line{
+    background-color: red;
+    color: white;
+}
+
+.deneme p:first-child{
+    font-weight: bold;
+    height: 500px;
+    background: repeating-linear-gradient(red, yellow 10%, blue 20%);
+}
+
+.deneme p:last-child{
+    font-style: italic;
+    animation-name: anim2;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    
+}
+
+.deneme p:nth-child(2){
+   font-size: 30px;
+   animation: anim1 2s alternate-reverse 3 2s ease-in-out;
+}
+
+.deneme p:nth-child(3){
+    animation: anim3 5s ease-in-out alternate;
+}
+.deneme p:nth-child(4){
+    height: 400px;
+    width: 400px;
+    background: radial-gradient(red 10%, green 20%, blue 30%);
+
+}
+
+.deneme p:nth-child(5){
+    height: 400px;
+    width: 400px;
+    background: repeating-radial-gradient(red, green 10%, blue 15%);
+
+}
+
+
+
+.deneme p:nth-of-type(2n+1){
+    text-decoration: underline;
+    padding: 10px;
+    margin: 10px;
+}
+
+p{
+    background-color: antiquewhite;
+}
+
+
+@keyframes anim1{
+    from{
+        background-color: red;
+        color: white;
+        width: 300px;
+    }
+    to{
+        background-color: blue;
+        color: red;
+        width: 400px;
+    }
+}
+
+@keyframes anim2{
+    from{
+        background-color: red;
+        color: white;
+        height: 100px;
+    }
+    to{
+        background-color: blue;
+        color: red;
+        height: 200px;
+    }
+}
+
+
+@keyframes anim3{
+    20%{
+        background-color: red;
+        color: white;
+        height: 100px;
+        width: 100px;
+        transform: translate(10px, 10px);
+        
+    }
+    40%{
+        background-color: green;
+        color: red;
+        height: 200px;
+        width: 200px;
+        transform: translate(20px, 20px);
+    }
+    60%{
+        background-color: blue;
+        color: green;
+        height: 300px;
+        width: 300px;
+        transform: translate(30px, 30px);
+    }
+    80%{
+        background-color: black;
+        color: white;
+        height: 400px;
+        width: 400px;
+        transform: translate(40px, 40px);
+    }
+}
+h1{
+    font-size: 72px;
+    background: linear-gradient(red, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+form{
+    background: linear-gradient(to right, red, blue);
+}
+
+img{
+    background-color: rebeccapurple;
+    width: 200px;
+    height: 300px;
+    object-fit: cover; /* resmin etiket icinde nasil yerlesecegini belirleme*/
+    /* yatayda - dikeyde degistirme*/
+    object-position:  60% 10%;
+}
